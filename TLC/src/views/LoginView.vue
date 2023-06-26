@@ -71,7 +71,12 @@
                 <div
                   class="form-right h-100 custom-purple text-white text-center pt-5"
                 >
-                  <h2 class="fs-1">Welcome Back!!!</h2>
+                  <h2 class="fs-1" style="padding-top: 100px">
+                    Welcome Back!!!
+                  </h2>
+                  <router-link class="float-center" to="/signup"
+                    >Don't have an account? Sign up</router-link
+                  >
                   <br /><br />
                   <h6 class="float-center text-danger" v-if="errorMessage">
                     {{ errorMessage }}
