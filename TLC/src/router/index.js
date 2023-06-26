@@ -7,7 +7,7 @@ import producr_list from "../views/productList.vue";
 
 const routes = [
   {
-    path: "/login",
+    path: "/",
     name: "Login",
     component: Login,
   },

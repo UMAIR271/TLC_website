@@ -35,7 +35,7 @@
       </div> -->
       <p>
         Already have an account
-        <router-link class="float-center" to="/login">Sign In</router-link>
+        <router-link class="float-center" to="/">Sign In</router-link>
       </p>
     </div>
   </div>
