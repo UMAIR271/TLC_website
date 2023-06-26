@@ -26,7 +26,6 @@
             <a class="nav-link" href="#">Kid's</a>
             <a class="nav-link" href="#">Abouts Us</a>
             <a class="nav-link" href="#">Cosmetics</a>
-            <a href="nav-link"><i class="fa-light fa-cart-shopping"></i></a>
           </div>
         </div>
       </div>

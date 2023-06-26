@@ -2,11 +2,10 @@
   <div class="container-fluid p-1">
     <div class="row m-4">
       <div class="col-12 col-sm-6 col-md-4 col-lg-3 p-1">
-        
         <div class="card">
           <img
             class="card-img"
-            src="../assets/img/blog/WhatsApp Image 2023-06-03 at 3.18.44 PM.jpeg"
+            src="../assets/img/blog/Pants.jpeg"
             alt="Bologna"
           />
           <div
@@ -25,7 +24,7 @@
         <div class="card">
           <img
             class="card-img"
-            src="../assets/img/blog/WhatsApp Image 2023-06-03 at 3.18.51 PM.jpeg"
+            src="../assets/img/blog/sleave_less.jpeg"
             alt="Bologna"
           />
           <div
@@ -44,7 +43,7 @@
         <div class="card">
           <img
             class="card-img"
-            src="../assets/img/blog/WhatsApp Image 2023-06-03 at 4.07.42 PM.jpeg"
+            src="../assets/img/blog/button_shirts.jpeg"
             alt="Bologna"
           />
           <div
@@ -63,7 +62,7 @@
         <div class="card">
           <img
             class="card-img"
-            src="../assets/img/blog/AirBrush_20230601224239.jpg"
+            src="../assets/img/blog/trouser.jpeg"
             alt="Bologna"
           />
           <div

@@ -83,6 +83,9 @@
     </div>
   </main>
 </template>
+
+<script></script>
+
 <style>
 .carousel-item img {
   height: 850px; /* Adjust the height value as per your requirement */
