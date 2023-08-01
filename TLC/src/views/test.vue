@@ -1,126 +1,272 @@
 <template>
-  <section class="showcase">
-    <img
-      src="../assets/img/blog/eduardo-pastor-3oejsU5OQVk-unsplash.jpg"
-      alt="Picture"
-      class="image"
-    />
-    <div class="overlay">
-      <h2>collection houses our first-ever</h2>
-      <br /><br />
-      <p>
-        <a href="#" class="butn butn__new"><span>Abouts Us</span></a>
-      </p>
+  <div class="container my-5">
+    <div class="row">
+      <div class="col-md-5">
+        <div class="main-img">
+          <img
+            class="img-fluid"
+            src="../assets/img/blog/AirBrush_20230601224022.jpg"
+            alt="ProductS"
+          />
+          <div class="row my-3 previews">
+            <div class="col-md-3">
+              <img
+                class="w-100"
+                src="../assets/img/blog/AirBrush_20230601224022.jpg"
+                alt="Sale"
+              />
+            </div>
+            <div class="col-md-3">
+              <img
+                class="w-100"
+                src="../assets/img/blog/AirBrush_20230601224022.jpg"
+                alt="Sale"
+              />
+            </div>
+            <div class="col-md-3">
+              <img
+                class="w-100"
+                src="../assets/img/blog/AirBrush_20230601224022.jpg"
+                alt="Sale"
+              />
+            </div>
+            <div class="col-md-3">
+              <img
+                class="w-100"
+                src="../assets/img/blog/AirBrush_20230601224022.jpg"
+                alt="Sale"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-7">
+        <div class="main-description px-2">
+          <div class="category text-bold">Category: Women</div>
+          <div class="product-title text-bold my-3">Black dress for Men</div>
+
+          <div class="price-area my-4">
+            <p class="old-price mb-1">
+              <del>$100</del>
+              <span class="old-price-discount text-danger">(20% off)</span>
+            </p>
+            <p class="new-price text-bold mb-1">$80</p>
+            <p class="text-secondary mb-1">
+              (Additional tax may apply on checkout)
+            </p>
+          </div>
+
+          <div class="buttons d-flex my-5">
+            <div class="block">
+              <a href="#" class="shadow btn custom-btn">Wishlist</a>
+            </div>
+            <div class="block">
+              <button class="shadow btn custom-btn">Add to cart</button>
+            </div>
+
+            <div class="block quantity">
+              <input
+                type="number"
+                class="form-control"
+                id="cart_quantity"
+                value="1"
+                min="0"
+                max="5"
+                placeholder="Enter email"
+                name="cart_quantity"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="product-details my-4">
+          <p class="details-title text-color mb-1">Product Details</p>
+          <p class="description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
+            excepturi odio recusandae aliquid ad impedit autem commodi earum
+            voluptatem laboriosam?
+          </p>
+        </div>
+
+        <div class="row questions bg-light p-3">
+          <div class="col-md-1 icon">
+            <i class="fa-brands fa-rocketchat questions-icon"></i>
+          </div>
+          <div class="col-md-11 text">
+            Have a question about our products at E-Store? Feel free to contact
+            our representatives via live chat or email.
+          </div>
+        </div>
+
+        <div class="delivery my-4">
+          <p class="font-weight-bold mb-0">
+            <span><i class="fa-solid fa-truck"></i></span>
+            <b>Delivery done in 3 days from date of purchase</b>
+          </p>
+          <p class="text-secondary">Order now to get this product delivery</p>
+        </div>
+        <div class="delivery-options my-4">
+          <p class="font-weight-bold mb-0">
+            <span><i class="fa-solid fa-filter"></i></span>
+            <b>Delivery options</b>
+          </p>
+          <p class="text-secondary">View delivery options here</p>
+        </div>
+      </div>
     </div>
-  </section>
-  <br /><br />
-  <div class="categories-area section-padding40 gray-bg">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 p-3">
-          <div
-            class="single-cat mb-50 wow fadeInUp"
-            data-wow-duration="1s"
-            data-wow-delay=".2s"
-          >
-            <div class="cat-icon">
-              <img src="../assets/img/blog/services1.svg" alt="" />
-            </div>
-            <div class="cat-cap">
-              <h5>Fast & Free Delivery</h5>
-              <p>Free delivery on all orders</p>
-            </div>
-          </div>
+  </div>
+
+  <div class="container similar-products my-4">
+    <hr />
+    <p class="display-5">Similar Products</p>
+
+    <div class="row">
+      <div class="col-md-3">
+        <div class="similar-product">
+          <img
+            class="w-100"
+            src="../assets/img/blog/AirBrush_20230601224022.jpg"
+            alt="Preview"
+          />
+          <p class="title">Lovely black dress</p>
+          <p class="price">$100</p>
         </div>
-        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 p-3">
-          <div
-            class="single-cat mb-50 wow fadeInUp"
-            data-wow-duration="1s"
-            data-wow-delay=".2s"
-          >
-            <div class="cat-icon">
-              <img src="../assets/img/blog/services2.svg" alt="" />
-            </div>
-            <div class="cat-cap">
-              <h5>Fast & Free Delivery</h5>
-              <p>Free delivery on all orders</p>
-            </div>
-          </div>
+      </div>
+      <div class="col-md-3">
+        <div class="similar-product">
+          <img
+            class="w-100"
+            src="../assets/img/blog/AirBrush_20230601224022.jpg"
+            alt="Preview"
+          />
+          <p class="title">Lovely Dress with patterns</p>
+          <p class="price">$85</p>
         </div>
-        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 p-3">
-          <div
-            class="single-cat mb-30 wow fadeInUp"
-            data-wow-duration="1s"
-            data-wow-delay=".4s"
-          >
-            <div class="cat-icon">
-              <img src="../assets/img/blog/services3.svg" alt="" />
-            </div>
-            <div class="cat-cap">
-              <h5>Fast & Free Delivery</h5>
-              <p>Free delivery on all orders</p>
-            </div>
-          </div>
+      </div>
+      <div class="col-md-3">
+        <div class="similar-product">
+          <img
+            class="w-100"
+            src="../assets/img/blog/AirBrush_20230601224022.jpg"
+            alt="Preview"
+          />
+          <p class="title">Lovely fashion dress</p>
+          <p class="price">$200</p>
         </div>
-        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 p-3">
-          <div
-            class="single-cat wow fadeInUp"
-            data-wow-duration="1s"
-            data-wow-delay=".5s"
-          >
-            <div class="cat-icon">
-              <img src="../assets/img/blog/services4.svg" alt="" />
-            </div>
-            <div class="cat-cap">
-              <h5>Fast & Free Delivery</h5>
-              <p>Free delivery on all orders</p>
-            </div>
-          </div>
+      </div>
+      <div class="col-md-3">
+        <div class="similar-product">
+          <img
+            class="w-100"
+            src="../assets/img/blog/AirBrush_20230601224022.jpg"
+            alt="Preview"
+          />
+          <p class="title">Lovely red dress</p>
+          <p class="price">$120</p>
         </div>
       </div>
     </div>
   </div>
 </template>
 <style>
-.showcase {
+.text-bold {
+  font-weight: 800;
+}
+
+text-color {
+  color: #000000;
+}
+
+/* Main image - left */
+.main-img img {
   width: 100%;
-  height: 500px;
-  position: relative;
+}
+
+/* Preview images */
+.previews img {
+  width: 100%;
+  height: 140px;
+}
+
+.main-description .category {
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.main-description .product-title {
+  font-size: 2.5rem;
+}
+
+.old-price-discount {
+  font-weight: 600;
+}
+
+.new-price {
+  font-size: 2rem;
+}
+
+.details-title {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #757575;
+}
+
+.buttons .block {
+  margin-right: 5px;
+}
+
+.quantity input {
+  border-radius: 0;
+  height: 40px;
+}
+
+.custom-btn {
+  text-transform: capitalize;
+  background-color: #000000;
   color: white;
-  text-align: center;
+  width: 150px;
+  height: 40px;
+  border-radius: 0;
 }
 
-.showcase img {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 99;
-  transition: transform 0.3s;
+.custom-btn:hover {
+  background-color: #000000 !important;
+  font-size: 18px;
+  color: white !important;
 }
 
-.showcase .overlay {
-  width: 100%;
-  height: 500px;
-  background-color: rgba(0, 35, 82, 0.7);
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 999;
+.similar-product img {
+  height: 400px;
 }
 
-.showcase h2 {
-  margin-top: 170px;
-  font-size: 3em;
+.similar-product {
+  text-align: left;
 }
 
-.showcase p {
-  margin-top: 8px;
-  font-size: 1.2em;
+.similar-product .title {
+  margin: 17px 0px 4px 0px;
 }
 
-.showcase .image:hover {
-  transform: scale(1.1);
+.similar-product .price {
+  font-weight: bold;
+}
+
+.questions .icon i {
+  font-size: 2rem;
+}
+
+.questions-icon {
+  font-size: 2rem;
+  color: #0093c4;
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+  /* Make preview images responsive  */
+  .previews img {
+    width: 100%;
+    height: auto;
+  }
 }
 </style>

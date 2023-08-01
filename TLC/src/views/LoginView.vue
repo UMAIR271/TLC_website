@@ -111,11 +111,11 @@ export default {
       console.log(userData);
       try {
         const response = await axios.post(
-          "https://tlcbackend-production-22a0.up.railway.app/api/v1/auth/login",
+          "http://3.110.88.248:8000/api/v1/auth/login",
           userData
         );
-
-        console.log(response);
+        const token = response.data.token;
+        localStorage.setItem("token", token);
         this.errorMessage = ""; // Reset error message
         this.$router.push("/home");
       } catch (error) {

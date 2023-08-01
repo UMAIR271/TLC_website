@@ -3,78 +3,86 @@
     <div class="row m-4">
       <div class="col-12 col-sm-6 col-md-4 col-lg-3 p-1">
         <div class="card">
-          <img
-            class="card-img"
-            src="../assets/img/blog/Pants.jpeg"
-            alt="Bologna"
-          />
-          <div
-            class="card-img-overlay text-white d-flex flex-column justify-content-center"
-          >
-            <h1
-              class="card-title text-center"
-              style="font-weight: bold; font-size: 50px"
+          <router-link to="/product_list">
+            <img
+              class="card-img"
+              src="../assets/img/blog/Pants.jpeg"
+              alt="Bologna"
+            />
+            <div
+              class="card-img-overlay text-white d-flex flex-column justify-content-center"
             >
-              Jeans
-            </h1>
-          </div>
+              <h1
+                class="card-title text-center"
+                style="font-weight: bold; font-size: 50px"
+              >
+                Pants
+              </h1>
+            </div>
+          </router-link>
         </div>
       </div>
       <div class="col-12 col-sm-6 col-md-4 col-lg-3 p-1">
         <div class="card">
-          <img
-            class="card-img"
-            src="../assets/img/blog/sleave_less.jpeg"
-            alt="Bologna"
-          />
-          <div
-            class="card-img-overlay text-white d-flex flex-column justify-content-center"
-          >
-            <h4
-              class="card-title text-center"
-              style="font-weight: bold; font-size: 50px"
+          <router-link to="/product_list">
+            <img
+              class="card-img"
+              src="../assets/img/blog/sleave_less.jpeg"
+              alt="Bologna"
+            />
+            <div
+              class="card-img-overlay text-white d-flex flex-column justify-content-center"
             >
-              Bologna
-            </h4>
-          </div>
+              <h4
+                class="card-title text-center"
+                style="font-weight: bold; font-size: 50px"
+              >
+                Half Sleeve Shirts
+              </h4>
+            </div>
+          </router-link>
         </div>
       </div>
       <div class="col-12 col-sm-6 col-md-4 col-lg-3 p-1">
         <div class="card">
-          <img
-            class="card-img"
-            src="../assets/img/blog/button_shirts.jpeg"
-            alt="Bologna"
-          />
-          <div
-            class="card-img-overlay text-white d-flex flex-column justify-content-center"
-          >
-            <h4
-              class="card-title text-center"
-              style="font-weight: bold; font-size: 50px"
+          <router-link to="/product_list">
+            <img
+              class="card-img"
+              src="../assets/img/blog/button_shirts.jpeg"
+              alt="Bologna"
+            />
+            <div
+              class="card-img-overlay text-white d-flex flex-column justify-content-center"
             >
-              Bologna
-            </h4>
-          </div>
+              <h4
+                class="card-title text-center"
+                style="font-weight: bold; font-size: 50px"
+              >
+                Button Down Shirts
+              </h4>
+            </div>
+          </router-link>
         </div>
       </div>
       <div class="col-12 col-sm-6 col-md-4 col-lg-3 p-1">
         <div class="card">
-          <img
-            class="card-img"
-            src="../assets/img/blog/trouser.jpeg"
-            alt="Bologna"
-          />
-          <div
-            class="card-img-overlay text-white d-flex flex-column justify-content-center"
-          >
-            <h4
-              class="card-title text-center"
-              style="font-weight: bold; font-size: 50px"
+          <router-link to="/product_list">
+            <img
+              class="card-img"
+              src="../assets/img/blog/trouser.jpeg"
+              alt="Bologna"
+            />
+            <div
+              class="card-img-overlay text-white d-flex flex-column justify-content-center"
             >
-              Bologna
-            </h4>
-          </div>
+              <h4
+                class="card-title text-center"
+                style="font-weight: bold; font-size: 50px"
+              >
+                Trouser
+              </h4>
+            </div>
+          </router-link>
         </div>
       </div>
     </div>
@@ -388,13 +396,49 @@
     </div>
   </div>
 </template>
+
 <script>
+import axios from "axios";
 import Logo from "./brandLogoComp.vue";
 export default {
   components: {
     Logo,
   },
-  data() {},
+  data() {
+    return {
+      collectionData: [],
+    };
+  },
+  mounted() {
+    console.log("Component mounted");
+    this.GetcollectionApi();
+  },
+  methods: {
+    async GetcollectionApi() {
+      try {
+        const token = localStorage.getItem("token");
+        const config = {
+          headers: {
+            Authorization: token,
+          },
+        };
+
+        const response = await axios.get(
+          "https://tlcbackend-production-22a0.up.railway.app/api/v1/collection",
+          config
+        );
+        console.log(response.data.collections);
+        for (let i = 0; i < response.data.collections.length; i++) {
+          this.collectionData.push(response.data.collections[i]);
+        }
+        console.log(this.collectionData);
+      } catch (error) {
+        console.log(error);
+        this.errorMessage =
+          error.response?.data?.message || "An error occurred.";
+      }
+    },
+  },
 };
 </script>
 <style>
@@ -431,6 +475,7 @@ export default {
 .card-title {
   font-weight: bold;
   font-size: 32px;
+  color: #ffffff;
   margin: 0;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
   animation: slide-up 0.5s ease-in-out;

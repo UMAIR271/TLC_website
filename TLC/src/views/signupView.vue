@@ -64,7 +64,7 @@ export default {
       console.log(userData);
       try {
         const response = await axios.post(
-          "https://tlcbackend-production-22a0.up.railway.app/api/v1/auth/signup",
+          "http://3.110.88.248:8000/api/v1/auth/signup",
           userData
         );
 

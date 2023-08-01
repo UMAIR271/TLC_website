@@ -4,6 +4,10 @@ import Home from "../views/HomeView.vue";
 import Signup from "../views/signupView.vue";
 import test from "../views/test.vue";
 import producr_list from "../views/productList.vue";
+import Dashboard from "../admin/DashboardView.vue";
+import Catagory from "../admin/catagaries.vue";
+import productView from "../admin/product.vue";
+import uploadCatagory from "../admin/uploadCatagory.vue";
 
 const routes = [
   {
@@ -30,6 +34,26 @@ const routes = [
     path: "/product_list",
     name: "product_list",
     component: producr_list,
+  },
+  {
+    path: "/admin",
+    name: "admin",
+    component: Dashboard,
+  },
+  {
+    path: "/catagory",
+    name: "Catagory",
+    component: Catagory,
+  },
+  {
+    path: "/productList",
+    name: "Product",
+    component: productView,
+  },
+  {
+    path: "/uploadCatagory",
+    name: "uploadCatagory",
+    component: uploadCatagory,
   },
 ];
 
