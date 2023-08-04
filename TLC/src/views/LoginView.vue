@@ -111,13 +111,23 @@ export default {
       console.log(userData);
       try {
         const response = await axios.post(
-          "http://3.110.88.248:8000/api/v1/auth/login",
+          "http://localhost:8000/api/v1/auth/login",
           userData
         );
-        const token = response.data.token;
-        localStorage.setItem("token", token);
-        this.errorMessage = ""; // Reset error message
-        this.$router.push("/home");
+        const role = response.data.user.role;
+        if (role == "USER") {
+          console.log(role);
+          const token = response.data.token;
+          localStorage.setItem("token", token);
+          this.errorMessage = ""; // Reset error message
+          this.$router.push("/home");
+        } else {
+          console.log(role);
+          const token = response.data.token;
+          localStorage.setItem("token", token);
+          this.errorMessage = ""; // Reset error message
+          this.$router.push("/admin");
+        }
       } catch (error) {
         console.log(error);
         this.errorMessage =

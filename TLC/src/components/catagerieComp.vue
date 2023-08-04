@@ -187,6 +187,7 @@
             <table class="table table-hover table-nowrap">
               <thead class="thead-light">
                 <tr>
+                  <th scope="col">ID</th>
                   <th scope="col">Name</th>
                   <th scope="col">Date</th>
                   <th scope="col">Category</th>
@@ -196,11 +197,11 @@
               <tbody>
                 <tr v-for="mapObject in CatagoryList" :key="mapObject.id">
                   <td>
-                    <img
-                      alt="..."
-                      src="https://images.unsplash.com/photo-1610878722345-79c5eaf6a48c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80"
-                      class="avatar avatar-sm rounded-circle me-2"
-                    />
+                    <a class="text-heading font-semibold" href="#">
+                      {{ mapObject._id }}
+                    </a>
+                  </td>
+                  <td>
                     <a class="text-heading font-semibold" href="#">
                       {{ mapObject.name }}
                     </a>
@@ -251,7 +252,7 @@ export default {
     async getCatagoryList() {
       try {
         const response = await axios.get(
-          "http://3.110.88.248:8000/api/v1/collection"
+          "http://localhost:8000/api/v1/collection"
         );
         const data = response.data.collections;
         this.CatagoryList = data;

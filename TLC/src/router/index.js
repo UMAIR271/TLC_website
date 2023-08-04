@@ -8,6 +8,8 @@ import Dashboard from "../admin/DashboardView.vue";
 import Catagory from "../admin/catagaries.vue";
 import productView from "../admin/product.vue";
 import uploadCatagory from "../admin/uploadCatagory.vue";
+import uploadProduct from "../admin/uploadProduct.vue";
+import testadmin from "../admin/testadmin.vue";
 
 const routes = [
   {
@@ -54,6 +56,16 @@ const routes = [
     path: "/uploadCatagory",
     name: "uploadCatagory",
     component: uploadCatagory,
+  },
+  {
+    path: "/uploadProduct",
+    name: "uploadProduct",
+    component: uploadProduct,
+  },
+  {
+    path: "/testadmin",
+    name: "testadmin",
+    component: testadmin,
   },
 ];
 

@@ -181,72 +181,103 @@
         </div>
         <div class="card shadow border-0 mb-7">
           <div class="card-header">
-            <h5 class="mb-0">Catagory</h5>
+            <h5 class="mb-0">Products</h5>
           </div>
           <!-- Add Product -->
           <section>
             <div class="container">
               <div class="row">
                 <div class="col-lg-10 col-md-8 ml-auto">
-                  <div class="row align-items-center pt-md-5 mt-md-5 mb-5">
+                  <div class="row align-items-center">
                     <div class="col-12">
                       <div class="card">
                         <div class="card-title text-center mt-3">
-                          <h3>Add Catagory</h3>
+                          <h3>Add Products</h3>
                         </div>
                         <div class="card-body">
-                          <form action="">
+                          <form @submit.prevent="addNewProduct()">
                             <div class="form-group">
-                              <label for="productname">Catagory Name:</label>
+                              <label for="productname">Product Name:</label
+                              ><br />
                               <input
                                 type="text"
                                 class="form-control"
                                 id="productname"
-                                placeholder="Enter Product Name"
+                                placeholder="Enter product Name"
+                                v-model="productName"
                               />
                               <div class="invalid-feedback">
-                                Product Name Can't Be Empty
+                                Catagory Name Can't Be Empty
                               </div>
                             </div>
-                            <div class="form-group">
-                              <label for="productid">Product Id:</label>
+                            <br />
+                            <p>Product Price:</p>
+                            <div class="custom-file">
                               <input
                                 type="text"
                                 class="form-control"
-                                id="productid"
-                                placeholder="Enter Product Id"
+                                id="productname"
+                                placeholder="Enter product Name"
+                                v-model="productPrice"
                               />
                               <div class="invalid-feedback">
-                                Product ID Can't Be Empty
+                                Price can't be Empty
                               </div>
                             </div>
-                            <div class="form-group">
-                              <label for="productprice">Product Price:</label>
+                            <br />
+                            <p>Product Description:</p>
+                            <div class="custom-file">
                               <input
                                 type="text"
                                 class="form-control"
-                                id="productprice"
-                                placeholder="Enter Product Price"
+                                id="productname"
+                                placeholder="Enter Product Description"
+                                v-model="productDescription"
                               />
                               <div class="invalid-feedback">
-                                Product Price Can't Be Empty
+                                product Description can't be Empty
                               </div>
                             </div>
-                            <p>Product Image:</p>
+                            <br />
+                            <p>Collection ID:</p>
+                            <div class="custom-file">
+                              <input
+                                type="text"
+                                class="form-control"
+                                id="productname"
+                                placeholder="Enter product Name"
+                                v-model="collectionID"
+                              />
+                              <div class="invalid-feedback">
+                                Price can't be Empty
+                              </div>
+                            </div>
+                            <p>Product images:</p>
                             <div class="custom-file">
                               <input
                                 type="file"
                                 class="custom-file-input"
+                                @change="onFileInputChange"
                                 id="productimage"
                                 required
                               />
-                              <label
-                                class="custom-file-label"
-                                for="productimage"
-                                >Choose file...</label
-                              >
                               <div class="invalid-feedback">
                                 File Format Not Supported
+                              </div>
+                              <br />
+                              <br />
+                              <p>Total Stock:</p>
+                              <div class="custom-file">
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  id="productname"
+                                  placeholder="Enter Total Number of product Stock"
+                                  v-model="productStock"
+                                />
+                                <div class="invalid-feedback">
+                                  product Stock can't be Empty
+                                </div>
                               </div>
                             </div>
                             <button
@@ -275,3 +306,52 @@
     </main>
   </div>
 </template>
+<script>
+import axios from "axios";
+export default {
+  data() {
+    return {
+      productName: "",
+      productPrice: "",
+      productDescription: "",
+      productsImages: null,
+      collectionID: "",
+      productStock: "",
+    };
+  },
+  methods: {
+    onFileInputChange(event) {
+      const file = event.target.files[0];
+      this.productsImages = file;
+    },
+    async addNewProduct() {
+      const token = localStorage.getItem("token");
+      const config = {
+        headers: {
+          Accept: "application/json",
+          Authorization: "Bearer " + token,
+        },
+      };
+
+      const productData = new FormData();
+      productData.append("name", this.productName);
+      productData.append("price", this.productPrice);
+      productData.append("description", this.productDescription);
+      productData.append("collectionId", this.collectionID);
+      productData.append("photos", this.productsImages);
+      productData.append("stock", this.productStock);
+
+      console.log(productData);
+      try {
+        const response = await axios.post(
+          "http://localhost:8000/api/v1/product/",
+          productData,
+          config
+        );
+      } catch (error) {
+        console.error(error);
+      }
+    },
+  },
+};
+</script>

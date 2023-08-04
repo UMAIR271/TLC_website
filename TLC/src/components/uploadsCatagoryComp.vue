@@ -188,34 +188,36 @@
             <div class="container">
               <div class="row">
                 <div class="col-lg-10 col-md-8 ml-auto">
-                  <div class="row align-items-center pt-md-5 mt-md-5 mb-5">
+                  <div class="row align-items-center">
                     <div class="col-12">
                       <div class="card">
                         <div class="card-title text-center mt-3">
                           <h3>Add Catagory</h3>
                         </div>
                         <div class="card-body">
-                          <form action="">
+                          <form @submit.prevent="addNewCategory()">
                             <div class="form-group">
-                              <label for="productname">Catagory Name:</label
-                              ><br /><br />
+                              <label for="productname">Category Name:</label
+                              ><br />
                               <input
                                 type="text"
                                 class="form-control"
                                 id="productname"
-                                placeholder="Enter Catagory Name"
+                                placeholder="Enter product Name"
+                                v-model="categoryName"
                               />
                               <div class="invalid-feedback">
                                 Catagory Name Can't Be Empty
                               </div>
                             </div>
                             <br />
-                            <p>Catagory Image:</p>
+                            <p>Category images:</p>
                             <br />
                             <div class="custom-file">
                               <input
                                 type="file"
                                 class="custom-file-input"
+                                @change="onFileInputChange"
                                 id="productimage"
                                 required
                               />
@@ -223,11 +225,12 @@
                                 File Format Not Supported
                               </div>
                             </div>
+
                             <button
                               class="btn btn-dark mt-5 mx-auto d-block"
                               type="submit"
                             >
-                              Add Product
+                              Add Category
                             </button>
                           </form>
                         </div>
@@ -249,3 +252,43 @@
     </main>
   </div>
 </template>
+<script>
+import axios from "axios";
+export default {
+  data() {
+    return {
+      categoryName: "",
+      categoryImage: null,
+    };
+  },
+  methods: {
+    onFileInputChange(event) {
+      const file = event.target.files[0];
+      this.categoryImage = file;
+    },
+    async addNewCategory() {
+      const token = localStorage.getItem("token");
+      const config = {
+        headers: {
+          Accept: "application/json",
+          Authorization: "Bearer " + token,
+        },
+      };
+      const categoryData = new FormData();
+      categoryData.append("name", this.categoryName);
+      categoryData.append("photo", this.categoryImage);
+      console.log(categoryData);
+
+      try {
+        const response = await axios.post(
+          "http://localhost:8000/api/v1/collection",
+          categoryData,
+          config
+        );
+      } catch (error) {
+        console.error(error);
+      }
+    },
+  },
+};
+</script>

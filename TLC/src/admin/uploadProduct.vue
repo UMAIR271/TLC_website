@@ -2,17 +2,17 @@
   <div class="d-flex flex-column flex-lg-row h-lg-full bg-surface-secondary">
     <!-- Vertical Navbar -->
     <sidebar></sidebar>
-    <ProductView> </ProductView>
+    <uploadCata> </uploadCata>
     <!-- Main content -->
   </div>
 </template>
 <script>
 import sidebar from "../components/adminSideBar.vue";
-import ProductView from "../components/productListComp.vue";
+import uploadCata from "../components/uploadProductComp.vue";
 export default {
   components: {
     sidebar,
-    ProductView,
+    uploadCata,
   },
 };
 </script>

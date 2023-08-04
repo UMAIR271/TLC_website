@@ -1,14 +1,14 @@
 <template>
   <div class="container-fluid p-1">
     <div class="row m-4">
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 p-1">
+      <div
+        class="col-12 col-sm-6 col-md-4 col-lg-3 p-1"
+        v-for="collection in collectionData"
+        :key="collection.id"
+      >
         <div class="card">
-          <router-link to="/product_list">
-            <img
-              class="card-img"
-              src="../assets/img/blog/Pants.jpeg"
-              alt="Bologna"
-            />
+          <a @click="fetchProductData(collection._id)">
+            <img class="card-img" :src="collection.photo" alt="Bologna" />
             <div
               class="card-img-overlay text-white d-flex flex-column justify-content-center"
             >
@@ -16,73 +16,10 @@
                 class="card-title text-center"
                 style="font-weight: bold; font-size: 50px"
               >
-                Pants
+                {{ collection.name }}
               </h1>
             </div>
-          </router-link>
-        </div>
-      </div>
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 p-1">
-        <div class="card">
-          <router-link to="/product_list">
-            <img
-              class="card-img"
-              src="../assets/img/blog/sleave_less.jpeg"
-              alt="Bologna"
-            />
-            <div
-              class="card-img-overlay text-white d-flex flex-column justify-content-center"
-            >
-              <h4
-                class="card-title text-center"
-                style="font-weight: bold; font-size: 50px"
-              >
-                Half Sleeve Shirts
-              </h4>
-            </div>
-          </router-link>
-        </div>
-      </div>
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 p-1">
-        <div class="card">
-          <router-link to="/product_list">
-            <img
-              class="card-img"
-              src="../assets/img/blog/button_shirts.jpeg"
-              alt="Bologna"
-            />
-            <div
-              class="card-img-overlay text-white d-flex flex-column justify-content-center"
-            >
-              <h4
-                class="card-title text-center"
-                style="font-weight: bold; font-size: 50px"
-              >
-                Button Down Shirts
-              </h4>
-            </div>
-          </router-link>
-        </div>
-      </div>
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 p-1">
-        <div class="card">
-          <router-link to="/product_list">
-            <img
-              class="card-img"
-              src="../assets/img/blog/trouser.jpeg"
-              alt="Bologna"
-            />
-            <div
-              class="card-img-overlay text-white d-flex flex-column justify-content-center"
-            >
-              <h4
-                class="card-title text-center"
-                style="font-weight: bold; font-size: 50px"
-              >
-                Trouser
-              </h4>
-            </div>
-          </router-link>
+          </a>
         </div>
       </div>
     </div>
@@ -93,14 +30,14 @@
     <br />
     <br />
     <div class="row">
-      <div class="col-md-3">
+      <div class="col-md-3" v-for="product in productList" :key="product._id">
         <div class="dress-card">
-          <div class="dress-card-head">
-            <img
-              class="dress-card-img-top"
-              src="../assets/img/blog/AirBrush_20230601224022.jpg"
-              alt=""
-            />
+          <div
+            class="dress-card-head"
+            v-for="photo in product.photos"
+            :key="photo.id"
+          >
+            <img class="dress-card-img-top" :src="photo.sucure_url" alt="" />
             <div class="surprise-bubble">
               <span class="dress-card-heart">
                 <i class="fas fa-heart"></i> </span
@@ -108,123 +45,11 @@
             </div>
           </div>
           <div class="dress-card-body">
-            <h4 class="dress-card-title">Harpa</h4>
-            <p class="dress-card-para">Womans printed clothing</p>
+            <h4 class="dress-card-title">{{ product.name }}</h4>
             <p class="dress-card-para">
-              <span class="dress-card-price">Rs.839 &ensp;</span
-              ><span class="dress-card-crossed">Rs.2099</span
-              ><span class="dress-card-off">&ensp;(60% OFF)</span>
-            </p>
-            <div class="row">
-              <div class="col-md-6 card-button">
-                <a href=""
-                  ><div class="card-button-inner bag-button">Add to Bag</div></a
-                >
-              </div>
-              <div class="col-md-6 card-button">
-                <a href=""
-                  ><div class="card-button-inner wish-button">Whishlist</div></a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="dress-card">
-          <div class="dress-card-head">
-            <img
-              class="dress-card-img-top"
-              src="../assets/img/blog/AirBrush_20230601224239.jpg"
-              alt=""
-            />
-            <div class="surprise-bubble">
-              <span class="dress-card-heart">
-                <i class="fas fa-heart"></i> </span
-              ><a href="#"> <span>More</span></a>
-            </div>
-          </div>
-          <div class="dress-card-body">
-            <h4 class="dress-card-title">Harpa</h4>
-            <p class="dress-card-para">Womans printed clothing</p>
-            <p class="dress-card-para">
-              <span class="dress-card-price">Rs.839 &ensp;</span
-              ><span class="dress-card-crossed">Rs.2099</span
-              ><span class="dress-card-off">&ensp;(60% OFF)</span>
-            </p>
-            <div class="row">
-              <div class="col-md-6 card-button">
-                <a href=""
-                  ><div class="card-button-inner bag-button">Add to Bag</div></a
-                >
-              </div>
-              <div class="col-md-6 card-button">
-                <a href=""
-                  ><div class="card-button-inner wish-button">Whishlist</div></a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="dress-card">
-          <div class="dress-card-head">
-            <img
-              class="dress-card-img-top"
-              src="../assets/img/blog/AirBrush_20230601224350.jpg"
-              alt=""
-            />
-            <div class="surprise-bubble">
-              <span class="dress-card-heart">
-                <i class="fas fa-heart"></i> </span
-              ><a href="#"> <span>More</span></a>
-            </div>
-          </div>
-          <div class="dress-card-body">
-            <h4 class="dress-card-title">Harpa</h4>
-            <p class="dress-card-para">Womans printed clothing</p>
-            <p class="dress-card-para">
-              <span class="dress-card-price">Rs.839 &ensp;</span
-              ><span class="dress-card-crossed">Rs.2099</span
-              ><span class="dress-card-off">&ensp;(60% OFF)</span>
-            </p>
-            <div class="row">
-              <div class="col-md-6 card-button">
-                <a href=""
-                  ><div class="card-button-inner bag-button">Add to Bag</div></a
-                >
-              </div>
-              <div class="col-md-6 card-button">
-                <a href=""
-                  ><div class="card-button-inner wish-button">Whishlist</div></a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="dress-card">
-          <div class="dress-card-head">
-            <img
-              class="dress-card-img-top"
-              src="../assets/img/blog/AirBrush_20230602000419.jpg"
-              alt=""
-            />
-            <div class="surprise-bubble">
-              <span class="dress-card-heart">
-                <i class="fas fa-heart"></i> </span
-              ><a href="#"> <span>More</span></a>
-            </div>
-          </div>
-          <div class="dress-card-body">
-            <h4 class="dress-card-title">Harpa</h4>
-            <p class="dress-card-para">Womans printed clothing</p>
-            <p class="dress-card-para">
-              <span class="dress-card-price">Rs.839 &ensp;</span
-              ><span class="dress-card-crossed">Rs.2099</span
-              ><span class="dress-card-off">&ensp;(60% OFF)</span>
+              <span class="dress-card-price">{{ product.price }} &ensp;</span>
+              <!-- <span class="dress-card-crossed">Rs.2099</span
+              ><span class="dress-card-off">&ensp;(60% OFF)</span> -->
             </p>
             <div class="row">
               <div class="col-md-6 card-button">
@@ -400,6 +225,7 @@
 <script>
 import axios from "axios";
 import Logo from "./brandLogoComp.vue";
+import { useAppStore } from "../store/index.js";
 export default {
   components: {
     Logo,
@@ -407,11 +233,14 @@ export default {
   data() {
     return {
       collectionData: [],
+      productList: [],
     };
   },
   mounted() {
     console.log("Component mounted");
     this.GetcollectionApi();
+    this.getProductList();
+    this.store = useAppStore();
   },
   methods: {
     async GetcollectionApi() {
@@ -424,7 +253,7 @@ export default {
         };
 
         const response = await axios.get(
-          "https://tlcbackend-production-22a0.up.railway.app/api/v1/collection",
+          "http://localhost:8000/api/v1/collection",
           config
         );
         console.log(response.data.collections);
@@ -437,6 +266,25 @@ export default {
         this.errorMessage =
           error.response?.data?.message || "An error occurred.";
       }
+    },
+    async getProductList() {
+      try {
+        const response = await axios.get(
+          "http://localhost:8000/api/v1/product/"
+        );
+        const data = response.data.product;
+        this.productList = data;
+        console.log(this.productList);
+        this.errorMessage = ""; // Reset error message
+      } catch (error) {
+        console.log(error);
+        this.errorMessage =
+          error.response?.data?.message || "An error occurred.";
+      }
+    },
+    fetchProductData(id) {
+      this.store.getCurrentCollectionId(id);
+      this.$router.push("/product_list");
     },
   },
 };
