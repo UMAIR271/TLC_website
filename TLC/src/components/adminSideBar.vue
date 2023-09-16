@@ -22,7 +22,7 @@
         href="#"
       >
         <img
-          src="../assets/img/Brand Logos/Hackett.png"
+          src="../assets/img/Brand_Logos/Hackett.png"
           style="height: 70px"
           alt="..."
         />

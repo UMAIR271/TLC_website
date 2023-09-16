@@ -5,58 +5,58 @@
   <div class="slider">
     <div class="slide-track">
       <div class="lable">
-        <img src="../assets/img/Brand Logos/Abercrombie & Fitch.png" alt="" />
+        <img src="../assets/img/Brand_Logos/Abercrombie_Fitch.png" alt="" />
       </div>
       <div class="lable">
-        <img src="../assets/img/Brand Logos/Adidas.png" alt="" />
+        <img src="../assets/img/Brand_Logos/Adidas.png" alt="" />
       </div>
       <div class="lable">
-        <img src="../assets/img/Brand Logos/American Eagle.png" alt="" />
+        <img src="../assets/img/Brand_Logos/American_Eagle.png" alt="" />
       </div>
       <div class="lable">
-        <img src="../assets/img/Brand Logos/Armani Exchange.png" alt="" />
+        <img src="../assets/img/Brand_Logos/Armani_Exchange.png" alt="" />
       </div>
       <div class="lable">
-        <img src="../assets/img/Brand Logos/Burberry.png" alt="" />
+        <img src="../assets/img/Brand_Logos/Burberry.png" alt="" />
       </div>
       <div class="lable">
-        <img src="../assets/img/Brand Logos/Calvin Klein.png" alt="" />
+        <img src="../assets/img/Brand_Logos/Calvin_Klein.png" alt="" />
       </div>
       <div class="lable">
-        <img src="../assets/img/Brand Logos/La Martina.png" alt="" />
+        <img src="../assets/img/Brand_Logos/La_Martina.png" alt="" />
       </div>
       <div class="lable">
-        <img src="../assets/img/Brand Logos/Chaps.png" alt="" />
+        <img src="../assets/img/Brand_Logos/Chaps.png" alt="" />
       </div>
       <div class="lable">
-        <img src="../assets/img/Brand Logos/Christian Dior.png" alt="" />
+        <img src="../assets/img/Brand_Logos/Christian_Dior.png" alt="" />
       </div>
       <div class="lable">
-        <img src="../assets/img/Brand Logos/D&G.png" alt="" />
+        <img src="../assets/img/Brand_Logos/D&G.png" alt="" />
       </div>
       <div class="lable">
-        <img src="../assets/img/Brand Logos/Diesel.png" alt="" />
+        <img src="../assets/img/Brand_Logos/Diesel.png" alt="" />
       </div>
       <div class="lable">
-        <img src="../assets/img/Brand Logos/DKNY.png" alt="" />
+        <img src="../assets/img/Brand_Logos/DKNY.png" alt="" />
       </div>
       <div class="lable">
-        <img src="../assets/img/Brand Logos/Emporio Armani.png" alt="" />
+        <img src="../assets/img/Brand_Logos/Emporio_Armani.png" alt="" />
       </div>
       <div class="lable">
-        <img src="../assets/img/Brand Logos/Fila.png" alt="" />
+        <img src="../assets/img/Brand_Logos/Fila.png" alt="" />
       </div>
       <div class="lable">
-        <img src="../assets/img/Brand Logos/Fred Perry.png" alt="" />
+        <img src="../assets/img/Brand_Logos/Fred_Perry.png" alt="" />
       </div>
       <div class="lable">
-        <img src="../assets/img/Brand Logos/Gant.png" alt="" />
+        <img src="../assets/img/Brand_Logos/Gant.png" alt="" />
       </div>
       <div class="lable">
-        <img src="../assets/img/Brand Logos/GAP.png" alt="" />
+        <img src="../assets/img/Brand_Logos/GAP.png" alt="" />
       </div>
       <div class="lable">
-        <img src="../assets/img/Brand Logos/Givenchy.png" alt="" />
+        <img src="../assets/img/Brand_Logos/Givenchy.png" alt="" />
       </div>
     </div>
   </div>

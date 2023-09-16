@@ -7,7 +7,7 @@
         <router-link class="navbar-brand text-uppercase fw-800 pe-5" to="/">
           <span class="pe-2">
             <img
-              src="../assets/img/Brand Logos/logo.png"
+              src="../assets/img/Brand_Logos/logo.png"
               style="height: 110px"
               alt=""
             />

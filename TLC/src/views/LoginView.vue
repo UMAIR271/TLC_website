@@ -73,7 +73,7 @@
                 >
                   <div class="mt-1">
                     <img
-                      src="../assets/img/Brand Logos/logo.png"
+                      src="../assets/img/Brand_Logos/logo.png"
                       style="height: 300px"
                       alt=""
                     />
