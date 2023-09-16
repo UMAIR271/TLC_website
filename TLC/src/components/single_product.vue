@@ -216,7 +216,7 @@ export default {
       try {
         if (id) {
           const response = await axios.get(
-            `http://localhost:8000/api/v1/product/get-by-collection/${id}`
+            `http://15.207.223.189:8000/api/v1/product/get-by-collection/${id}`
           );
           console.log(response.data);
           this.productList = response.data.products;
@@ -241,7 +241,7 @@ export default {
           };
           this.collectionName = this.store.collectionName;
           const response = await axios.get(
-            `http://localhost:8000/api/v1/product/${this.store.singleProductId}`,
+            `http://15.207.223.189:8000/api/v1/product/${this.store.singleProductId}`,
             config
           );
           this.singleProductIdData = response.data.product;
@@ -262,7 +262,7 @@ export default {
       try {
         if (this.store.singleProductId !== null) {
           const response = await axios.get(
-            `http://localhost:8000/api/v1/collection/${id}`
+            `http://15.207.223.189:8000/api/v1/collection/${id}`
           );
           this.collectionName = response.data.collection.name;
           this.fetchCollectionIdproduct(id);
@@ -294,7 +294,7 @@ export default {
         };
 
         const response = await axios.post(
-          `http://localhost:8000/api/v1/review/`,
+          `http://15.207.223.189:8000/api/v1/review/`,
           userData,
           config
         );

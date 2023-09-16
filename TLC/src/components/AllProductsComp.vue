@@ -39,7 +39,7 @@ export default {
     async fetchAllProducts() {
       try {
         const response = await axios.get(
-          "http://localhost:8000/api/v1/product/"
+          "http://15.207.223.189:8000/api/v1/product/"
         );
         this.productList = response.data.product;
         console.log("response", response);

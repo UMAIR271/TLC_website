@@ -41,7 +41,7 @@ export default {
         if (this.store.collectionId !== null) {
           this.collectionName = this.store.collectionName;
           const response = await axios.get(
-            `http://localhost:8000/api/v1/product/get-by-collection/${this.store.collectionId}`
+            `http://15.207.223.189:8000/api/v1/product/get-by-collection/${this.store.collectionId}`
           );
           this.productList = response.data.products;
           // console.log("hello".this.collectionName);
