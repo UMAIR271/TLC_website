@@ -237,6 +237,7 @@
                     <button
                       type="button"
                       class="btn btn-sm btn-square btn-neutral text-danger-hover"
+                      @click="deleteProduct(mapObject._id)"
                     >
                       <i class="bi bi-trash"></i>
                     </button>
@@ -257,7 +258,8 @@
 </template>
 <script>
 import axios from "axios";
-
+import { toast } from "vue3-toastify";
+import "vue3-toastify/dist/index.css";
 export default {
   data() {
     return {
@@ -281,6 +283,30 @@ export default {
         console.log(error);
         this.errorMessage =
           error.response?.data?.message || "An error occurred.";
+      }
+    },
+    deleteProduct(id) {
+      try {
+        const token = localStorage.getItem("token");
+        const config = {
+          headers: {
+            Authorization: token,
+          },
+        };
+        axios.delete(
+          `http://localhost:8000/api/v1/product/delete-product/${id}`,
+          config
+        );
+        this.Notify("Product deleted sucessfully");
+      } catch {
+        this.Notify("Try Again");
+      }
+    },
+    Notify(data) {
+      if (data) {
+        toast.success(data);
+      } else {
+        toast.error(data);
       }
     },
   },

@@ -101,7 +101,7 @@
         class="list-unstyled list-inline text-center"
       >
         <li class="list-inline-item">
-          <a href="https://www.facebook.com/codewithfaraz" title="Facebook"
+          <a href="https://www.facebook.com/theleftovercloset" title="Facebook"
             ><i class="fab fa-facebook"></i
           ></a>
         </li>
@@ -111,7 +111,9 @@
           ></a>
         </li>
         <li class="list-inline-item">
-          <a href="https://www.instagram.com/codewithfaraz" title="Instagram"
+          <a
+            href="https://www.instagram.com/theleftovercloset/"
+            title="Instagram"
             ><i class="fb fa-instagram"></i
           ></a>
         </li>

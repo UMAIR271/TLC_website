@@ -256,7 +256,6 @@ export default {
         );
         const data = response.data.collections;
         this.CatagoryList = data;
-        console.log(this.CatagoryList);
         this.errorMessage = ""; // Reset error message
       } catch (error) {
         console.log(error);

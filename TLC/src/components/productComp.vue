@@ -1,13 +1,22 @@
 <template>
   <div id="wrap">
     <div id="columns" class="columns_4">
+      <h1>{{ collectionName }} Products</h1>
+      <br /><br />
       <figure v-for="product in productList" :key="product._id">
-        <a v-for="photo in product.photos" :key="photo">
+        <a
+          v-for="photo in product.photos"
+          @click="redirectSingleProduct(product._id)"
+          :key="photo"
+        >
           <img :src="photo.sucure_url" />
         </a>
-          <figcaption>{{ product.name }}</figcaption>
-          <span class="price">$44</span>
-        <a class="button" href="#">Buy Now</a>
+        <figcaption>
+          {{ product.name }}
+          <span class="price">PKR{{ product.price }}</span>
+        </figcaption>
+        <a class="button" @click="addToCard(product._id)">Add To Bag</a>
+        <a class="button" @click="redirectCheckOut(product._id)">Buy Now</a>
       </figure>
     </div>
   </div>
@@ -23,27 +32,39 @@ export default {
   data() {
     return {
       productList: null,
+      collectionName: null,
     };
   },
   methods: {
     async fetchCollectionIdproduct() {
       try {
         if (this.store.collectionId !== null) {
-          console.log(this.store.collectionId);
+          this.collectionName = this.store.collectionName;
           const response = await axios.get(
             `http://localhost:8000/api/v1/product/get-by-collection/${this.store.collectionId}`
           );
-          console.log(response.data);
           this.productList = response.data.products;
-          this.store.updateCurrentCollectionID();
-          console.log(this.store.collectionId);
-          console.log(this.productList);
+          // console.log("hello".this.collectionName);
+          // this.store.updateCurrentCollectionID();
         } else {
           console.log("collectionId is null or undefined");
         }
       } catch (error) {
         console.error("An error occurred:", error);
       }
+    },
+    redirectSingleProduct(productId) {
+      this.store.singleProduct(productId);
+      // this.addToCard(productId);
+      this.$router.push("/singleProduct");
+    },
+    redirectCheckOut(productId) {
+      this.store.singleProduct(productId);
+      this.addToCard(productId);
+      this.$router.push("/checkOut");
+    },
+    addToCard(id) {
+      this.store.addTocardBag(id);
     },
   },
 };
@@ -127,7 +148,7 @@ div#columns figure figcaption {
 
 a.button {
   padding: 10px;
-  background: salmon;
+  background: rgb(0, 0, 0);
   margin: 10px;
   display: block;
   text-align: center;
@@ -136,7 +157,7 @@ a.button {
   text-decoration: none;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
   border-radius: 3px;
-  border-bottom: 3px solid #ff6536;
+  border-bottom: 3px solid #000000;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 a.button:hover {

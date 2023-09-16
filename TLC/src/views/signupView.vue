@@ -35,7 +35,7 @@
       </div> -->
       <p>
         Already have an account
-        <router-link class="float-center" to="/">Sign In</router-link>
+        <router-link class="float-center" to="/login">Sign In</router-link>
       </p>
     </div>
   </div>
@@ -70,7 +70,7 @@ export default {
 
         console.log(response);
         this.errorMessage = ""; // Reset error message
-        this.$router.push("/");
+        this.$router.push("/login");
       } catch (error) {
         console.log(error);
         this.errorMessage =
@@ -158,14 +158,14 @@ p {
   padding: 8px 0;
   margin: 24px 0;
   border-radius: 4px;
-  background-color: #6366f1;
+  background-color: #04aa6d;
   color: #ffffff;
   font-size: 16px;
   cursor: pointer;
 }
 
 .signup-btn:active {
-  background-color: #4f46e5;
+  background-color: #04aa6d#4f46e5;
   transition: all 0.3s ease;
 }
 

@@ -5,112 +5,58 @@
   <div class="slider">
     <div class="slide-track">
       <div class="lable">
-        <img
-          src="https://cdn.freebiesupply.com/logos/thumbs/2x/mcdonalds-black-logo.png"
-          alt=""
-        />
+        <img src="../assets/img/Brand Logos/Abercrombie & Fitch.png" alt="" />
       </div>
       <div class="lable">
-        <img
-          src="https://cdn.freebiesupply.com/images/large/2x/starbucks-logo-black-and-white.png"
-          alt=""
-        />
+        <img src="../assets/img/Brand Logos/Adidas.png" alt="" />
       </div>
       <div class="lable">
-        <img
-          src="https://cdn.freebiesupply.com/logos/large/2x/general-electric-black-logo-png-transparent.png"
-          alt=""
-        />
+        <img src="../assets/img/Brand Logos/American Eagle.png" alt="" />
       </div>
       <div class="lable">
-        <img
-          src="https://cdn.freebiesupply.com/logos/large/2x/nfl-logo-png-transparent.png"
-          alt=""
-        />
+        <img src="../assets/img/Brand Logos/Armani Exchange.png" alt="" />
       </div>
       <div class="lable">
-        <img
-          src="https://cdn.freebiesupply.com/logos/large/2x/mercedes-benz-6-logo-png-transparent.png"
-          alt=""
-        />
+        <img src="../assets/img/Brand Logos/Burberry.png" alt="" />
       </div>
       <div class="lable">
-        <img
-          src="https://cdn.freebiesupply.com/logos/large/2x/hogwarts-logo-png-transparent.png"
-          alt=""
-        />
+        <img src="../assets/img/Brand Logos/Calvin Klein.png" alt="" />
       </div>
       <div class="lable">
-        <img
-          src="https://cdn.freebiesupply.com/logos/thumbs/2x/mcdonalds-black-logo.png"
-          alt=""
-        />
+        <img src="../assets/img/Brand Logos/La Martina.png" alt="" />
       </div>
       <div class="lable">
-        <img
-          src="https://cdn.freebiesupply.com/images/large/2x/starbucks-logo-black-and-white.png"
-          alt=""
-        />
+        <img src="../assets/img/Brand Logos/Chaps.png" alt="" />
       </div>
       <div class="lable">
-        <img
-          src="https://cdn.freebiesupply.com/logos/large/2x/general-electric-black-logo-png-transparent.png"
-          alt=""
-        />
+        <img src="../assets/img/Brand Logos/Christian Dior.png" alt="" />
       </div>
       <div class="lable">
-        <img
-          src="https://cdn.freebiesupply.com/logos/large/2x/nfl-logo-png-transparent.png"
-          alt=""
-        />
+        <img src="../assets/img/Brand Logos/D&G.png" alt="" />
       </div>
       <div class="lable">
-        <img
-          src="https://cdn.freebiesupply.com/logos/large/2x/mercedes-benz-6-logo-png-transparent.png"
-          alt=""
-        />
+        <img src="../assets/img/Brand Logos/Diesel.png" alt="" />
       </div>
       <div class="lable">
-        <img
-          src="https://cdn.freebiesupply.com/logos/large/2x/hogwarts-logo-png-transparent.png"
-          alt=""
-        />
+        <img src="../assets/img/Brand Logos/DKNY.png" alt="" />
       </div>
       <div class="lable">
-        <img
-          src="https://cdn.freebiesupply.com/logos/thumbs/2x/mcdonalds-black-logo.png"
-          alt=""
-        />
+        <img src="../assets/img/Brand Logos/Emporio Armani.png" alt="" />
       </div>
       <div class="lable">
-        <img
-          src="https://cdn.freebiesupply.com/images/large/2x/starbucks-logo-black-and-white.png"
-          alt=""
-        />
+        <img src="../assets/img/Brand Logos/Fila.png" alt="" />
       </div>
       <div class="lable">
-        <img
-          src="https://cdn.freebiesupply.com/logos/large/2x/general-electric-black-logo-png-transparent.png"
-          alt=""
-        />
+        <img src="../assets/img/Brand Logos/Fred Perry.png" alt="" />
       </div>
       <div class="lable">
-        <img
-          src="https://cdn.freebiesupply.com/logos/large/2x/nfl-logo-png-transparent.png"
-          alt=""
-        />
+        <img src="../assets/img/Brand Logos/Gant.png" alt="" />
       </div>
       <div class="lable">
-        <img
-          src="https://cdn.freebiesupply.com/logos/large/2x/mercedes-benz-6-logo-png-transparent.png"
-          alt=""
-        />
+        <img src="../assets/img/Brand Logos/GAP.png" alt="" />
       </div>
       <div class="lable">
-        <img
-          src="https://cdn.freebiesupply.com/logos/large/2x/hogwarts-logo-png-transparent.png"
-          alt=""
-        />
+        <img src="../assets/img/Brand Logos/Givenchy.png" alt="" />
       </div>
     </div>
   </div>

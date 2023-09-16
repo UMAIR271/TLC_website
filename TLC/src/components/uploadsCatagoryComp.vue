@@ -254,6 +254,8 @@
 </template>
 <script>
 import axios from "axios";
+import { toast } from "vue3-toastify";
+import "vue3-toastify/dist/index.css";
 export default {
   data() {
     return {
@@ -285,8 +287,18 @@ export default {
           categoryData,
           config
         );
+        this.Notify("New Category added successfully");
+        this.categoryName = "";
+        this.categoryImage = null;
       } catch (error) {
         console.error(error);
+      }
+    },
+    Notify(data) {
+      if (data) {
+        toast.info(data);
+      } else {
+        toast.warning("Failed Try Again!");
       }
     },
   },

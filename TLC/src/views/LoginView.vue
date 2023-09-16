@@ -71,9 +71,13 @@
                 <div
                   class="form-right h-100 custom-purple text-white text-center pt-5"
                 >
-                  <h2 class="fs-1" style="padding-top: 100px">
-                    Welcome Back!!!
-                  </h2>
+                  <div class="mt-1">
+                    <img
+                      src="../assets/img/Brand Logos/logo.png"
+                      style="height: 300px"
+                      alt=""
+                    />
+                  </div>
                   <router-link class="float-center" to="/signup"
                     >Don't have an account? Sign up</router-link
                   >
@@ -87,6 +91,11 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="login-button-mobile">
+      <button class="btn custom-purple px-4 mt-3" @click="loginUser()">
+        Login
+      </button>
     </div>
   </div>
 </template>
@@ -118,14 +127,18 @@ export default {
         if (role == "USER") {
           console.log(role);
           const token = response.data.token;
+          const userId = response.data.user._id;
           localStorage.setItem("token", token);
+          localStorage.setItem("userId", userId);
           this.errorMessage = ""; // Reset error message
-          this.$router.push("/home");
+          this.$router.push("/");
         } else {
           console.log(role);
           const token = response.data.token;
+          const userId = response.data.user._id;
           localStorage.setItem("token", token);
-          this.errorMessage = ""; // Reset error message
+          localStorage.setItem("userId", userId);
+          this.errorMessage = "";
           this.$router.push("/admin");
         }
       } catch (error) {
@@ -137,23 +150,48 @@ export default {
   },
 };
 </script>
-
 <style>
 a {
   text-decoration: none;
 }
+
 .login-page {
   width: 100%;
   height: 100vh;
-  display: inline-block;
   display: flex;
   align-items: center;
 }
-.form-right i {
-  font-size: 100px;
+
+.login-button-mobile {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem;
+  background-color: white;
+  box-shadow: 0px -3px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
-.custom-purple {
-  background-color: #000000;
-  color: white;
+
+/* Adjust this media query as needed */
+@media (min-width: 768px) {
+  .login-button-mobile {
+    display: none;
+  }
+}
+
+/* Adjust styles for mobile responsiveness */
+@media (max-width: 767px) {
+  .login-page {
+    padding: 0;
+  }
+
+  .form-left,
+  .form-right {
+    padding: 1rem;
+  }
+
+  .btn.custom-purple {
+    width: 100%;
+  }
 }
 </style>

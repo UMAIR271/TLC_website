@@ -1,12 +1,18 @@
 <template>
-  <header>
+  <header class="sticky-header">
     <!-- Header Start -->
 
     <nav class="navbar navbar-expand-md navbar-light bg-white p-4">
       <div class="container-fluid p-0">
-        <a class="navbar-brand text-uppercase fw-800" href="#"
-          ><span class="border-red pe-2">New</span>Product</a
-        >
+        <router-link class="navbar-brand text-uppercase fw-800 pe-5" to="/">
+          <span class="pe-2">
+            <img
+              src="../assets/img/Brand Logos/logo.png"
+              style="height: 110px"
+              alt=""
+            />
+          </span>
+        </router-link>
         <button
           class="navbar-toggler"
           type="button"
@@ -22,10 +28,16 @@
           <div class="navbar-nav ms-auto">
             <a class="nav-link active" aria-current="page" href="#">All</a>
             <!-- <a class="nav-link" href="#">Women's</a> -->
-            <a class="nav-link" href="#">Men's</a>
-            <a class="nav-link" href="#">Kid's</a>
-            <a class="nav-link" href="#">Abouts Us</a>
-            <a class="nav-link" href="#">Cosmetics</a>
+            <router-link class="nav-link" to="/Men">Men</router-link>
+            <router-link class="nav-link" to="/women">Women</router-link>
+            <router-link class="nav-link" to="/kid">Kid</router-link>
+            <router-link class="nav-link" to="/shoes">Shoes</router-link>
+            <router-link class="nav-link" to="/shopingCart"
+              >({{ addToCard }})<i class="fa-solid fa-cart-shopping fa-2xl"></i
+            ></router-link>
+            <router-link class="nav-link" to="/login" @click="logout()"
+              >Logout</router-link
+            >
           </div>
         </div>
       </div>
@@ -33,6 +45,40 @@
     <!-- Header End -->
   </header>
 </template>
+<script>
+import { useAppStore } from "../store/index.js";
+import { ref, watch } from "vue";
+
+export default {
+  setup() {
+    const store = useAppStore();
+    const addToCard = ref(store.addToCounter);
+
+    // Watch for changes in store.addToCounter and update addToCard
+    watch(
+      () => store.addToCounter,
+      (newValue) => {
+        addToCard.value = newValue;
+      }
+    );
+
+    return {
+      addToCard,
+    };
+  },
+
+  methods: {
+    logout() {
+      // Clear the authentication token from localStorage
+      localStorage.removeItem("token");
+      localStorage.removeItem("userId");
+
+      // Redirect the user to the login page (replace with your login route)
+      this.$router.push("/login");
+    },
+  },
+};
+</script>
 <style>
 .container {
   margin: 30px auto;
@@ -48,6 +94,13 @@
 
 .navbar .navbar-toggler:focus {
   box-shadow: none;
+}
+.sticky-header {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 100;
+  /* Your other styling */
 }
 
 .navbar-nav .nav-link.active,

@@ -308,6 +308,8 @@
 </template>
 <script>
 import axios from "axios";
+import { toast } from "vue3-toastify";
+import "vue3-toastify/dist/index.css";
 export default {
   data() {
     return {
@@ -348,8 +350,23 @@ export default {
           productData,
           config
         );
+        this.Notify("New Product added successfully");
+        (this.productName = ""),
+          (this.productPrice = ""),
+          (this.productDescription = ""),
+          (this.productsImages = null),
+          (this.collectionID = ""),
+          (this.productStock = "");
       } catch (error) {
         console.error(error);
+        this.Notify(error);
+      }
+    },
+    Notify(data) {
+      if (data) {
+        toast.success(data);
+      } else {
+        toast.error(error);
       }
     },
   },

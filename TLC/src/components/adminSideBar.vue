@@ -17,9 +17,13 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <!-- Brand -->
-      <a class="navbar-brand py-lg-2 mb-lg-5 px-lg-6 me-0" href="#">
+      <a
+        class="navbar-brand py-lg-2 mb-lg-5 px-lg-6 me-0 d-flex justify-content-center align-items-center"
+        href="#"
+      >
         <img
-          src="https://preview.webpixels.io/web/img/logos/clever-primary.svg"
+          src="../assets/img/Brand Logos/Hackett.png"
+          style="height: 70px"
           alt="..."
         />
       </a>
@@ -73,7 +77,7 @@
             </router-link>
           </li>
           <li class="nav-item">
-            <router-link to="/productList" class="nav-link">
+            <router-link to="/adminProductList" class="nav-link">
               <i class="bi bi-bar-chart"></i> Products
             </router-link>
           </li>
@@ -85,6 +89,11 @@
           <li class="nav-item">
             <router-link to="/uploadProduct" class="nav-link">
               <i class="bi bi-bar-chart"></i> New Products
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link to="/generateCoupon" class="nav-link">
+              <i class="bi bi-bar-chart"></i> Generate Coupon
             </router-link>
           </li>
         </ul>

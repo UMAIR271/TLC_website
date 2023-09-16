@@ -7,7 +7,7 @@
         :key="collection.id"
       >
         <div class="card">
-          <a @click="fetchProductData(collection._id)">
+          <a @click="fetchProductData(collection._id, collection.name)">
             <img class="card-img" :src="collection.photo" alt="Bologna" />
             <div
               class="card-img-overlay text-white d-flex flex-column justify-content-center"
@@ -31,35 +31,44 @@
     <br />
     <div class="row">
       <div class="col-md-3" v-for="product in productList" :key="product._id">
-        <div class="dress-card">
+        <div
+          class="dress-card"
+          :class="{ 'out-of-stock': isProductOutOfStock(product) }"
+        >
           <div
             class="dress-card-head"
             v-for="photo in product.photos"
             :key="photo.id"
           >
             <img class="dress-card-img-top" :src="photo.sucure_url" alt="" />
-            <div class="surprise-bubble">
-              <span class="dress-card-heart">
-                <i class="fas fa-heart"></i> </span
-              ><a href="#"> <span>More</span></a>
-            </div>
           </div>
-          <div class="dress-card-body">
+          <div class="dress-card-body text-center">
             <h4 class="dress-card-title">{{ product.name }}</h4>
-            <p class="dress-card-para">
-              <span class="dress-card-price">{{ product.price }} &ensp;</span>
-              <!-- <span class="dress-card-crossed">Rs.2099</span
-              ><span class="dress-card-off">&ensp;(60% OFF)</span> -->
+            <br />
+            <p class="dress-card-para text-center">
+              <span class="dress-card-price"
+                >Rs {{ product.price }} &ensp;</span
+              >
+              <span
+                v-if="isProductOutOfStock(product)"
+                class="out-of-stock-message"
+              >
+                Out of Stock
+              </span>
             </p>
             <div class="row">
-              <div class="col-md-6 card-button">
-                <a href=""
-                  ><div class="card-button-inner bag-button">Add to Bag</div></a
-                >
-              </div>
-              <div class="col-md-6 card-button">
-                <a href=""
-                  ><div class="card-button-inner wish-button">Whishlist</div></a
+              <div class="col-md-12 card-button">
+                <a
+                  ><div
+                    class="card-button-inner bag-button custom-link"
+                    @click="addToCard(product._id)"
+                  >
+                    {{
+                      isProductOutOfStock(product)
+                        ? "Out of Stock"
+                        : "Add to Bag"
+                    }}
+                  </div></a
                 >
               </div>
             </div>
@@ -69,162 +78,12 @@
     </div>
     <br />
     <br />
-    <div class="row">
-      <div class="col-md-3">
-        <div class="dress-card">
-          <div class="dress-card-head">
-            <img
-              class="dress-card-img-top"
-              src="../assets/img/blog/AirBrush_20230602002755.jpg"
-              alt=""
-            />
-            <div class="surprise-bubble">
-              <span class="dress-card-heart">
-                <i class="fas fa-heart"></i> </span
-              ><a href="#"> <span>More</span></a>
-            </div>
-          </div>
-          <div class="dress-card-body">
-            <h4 class="dress-card-title">Harpa</h4>
-            <p class="dress-card-para">Womans printed clothing</p>
-            <p class="dress-card-para">
-              <span class="dress-card-price">Rs.839 &ensp;</span
-              ><span class="dress-card-crossed">Rs.2099</span
-              ><span class="dress-card-off">&ensp;(60% OFF)</span>
-            </p>
-            <div class="row">
-              <div class="col-md-6 card-button">
-                <a href=""
-                  ><div class="card-button-inner bag-button">Add to Bag</div></a
-                >
-              </div>
-              <div class="col-md-6 card-button">
-                <a href=""
-                  ><div class="card-button-inner wish-button">Whishlist</div></a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="dress-card">
-          <div class="dress-card-head">
-            <img
-              class="dress-card-img-top"
-              src="../assets/img/blog/Untitled32_20230601213849.png"
-              alt=""
-            />
-            <div class="surprise-bubble">
-              <span class="dress-card-heart">
-                <i class="fas fa-heart"></i> </span
-              ><a href="#"> <span>More</span></a>
-            </div>
-          </div>
-          <div class="dress-card-body">
-            <h4 class="dress-card-title">Harpa</h4>
-            <p class="dress-card-para">Womans printed clothing</p>
-            <p class="dress-card-para">
-              <span class="dress-card-price">Rs.839 &ensp;</span
-              ><span class="dress-card-crossed">Rs.2099</span
-              ><span class="dress-card-off">&ensp;(60% OFF)</span>
-            </p>
-            <div class="row">
-              <div class="col-md-6 card-button">
-                <a href=""
-                  ><div class="card-button-inner bag-button">Add to Bag</div></a
-                >
-              </div>
-              <div class="col-md-6 card-button">
-                <a href=""
-                  ><div class="card-button-inner wish-button">Whishlist</div></a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="dress-card">
-          <div class="dress-card-head">
-            <img
-              class="dress-card-img-top"
-              src="../assets/img/blog/Untitled35_20230601234526_2.png"
-              alt=""
-            />
-            <div class="surprise-bubble">
-              <span class="dress-card-heart">
-                <i class="fas fa-heart"></i> </span
-              ><a href="#"> <span>More</span></a>
-            </div>
-          </div>
-          <div class="dress-card-body">
-            <h4 class="dress-card-title">Harpa</h4>
-            <p class="dress-card-para">Womans printed clothing</p>
-            <p class="dress-card-para">
-              <span class="dress-card-price">Rs.839 &ensp;</span
-              ><span class="dress-card-crossed">Rs.2099</span
-              ><span class="dress-card-off">&ensp;(60% OFF)</span>
-            </p>
-            <div class="row">
-              <div class="col-md-6 card-button">
-                <a href=""
-                  ><div class="card-button-inner bag-button">Add to Bag</div></a
-                >
-              </div>
-              <div class="col-md-6 card-button">
-                <a href=""
-                  ><div class="card-button-inner wish-button">Whishlist</div></a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="dress-card">
-          <div class="dress-card-head">
-            <img
-              class="dress-card-img-top"
-              src="../assets/img/blog/Untitled42_20230602004452.png"
-              alt=""
-            />
-            <div class="surprise-bubble">
-              <span class="dress-card-heart">
-                <i class="fas fa-heart"></i> </span
-              ><a href="#"> <span>More</span></a>
-            </div>
-          </div>
-          <div class="dress-card-body">
-            <h4 class="dress-card-title">Harpa</h4>
-            <p class="dress-card-para">Womans printed clothing</p>
-            <p class="dress-card-para">
-              <span class="dress-card-price">Rs.839 &ensp;</span
-              ><span class="dress-card-crossed">Rs.2099</span
-              ><span class="dress-card-off">&ensp;(60% OFF)</span>
-            </p>
-            <div class="row">
-              <div class="col-md-6 card-button">
-                <a href=""
-                  ><div class="card-button-inner bag-button">Add to Bag</div></a
-                >
-              </div>
-              <div class="col-md-6 card-button">
-                <a href=""
-                  ><div class="card-button-inner wish-button">Whishlist</div></a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </template>
 
 <script>
 import axios from "axios";
-import Logo from "./brandLogoComp.vue";
+import Logo from "../components/brandLogoComp.vue";
 import { useAppStore } from "../store/index.js";
 export default {
   components: {
@@ -237,11 +96,22 @@ export default {
     };
   },
   mounted() {
-    console.log("Component mounted");
     this.GetcollectionApi();
     this.getProductList();
     this.store = useAppStore();
   },
+  computed: {
+    isProductOutOfStock() {
+      return (product) => {
+        const isOutOfStock = product.stock === 0;
+        console.log(
+          `Product ID ${product._id} is out of stock: ${isOutOfStock}`
+        );
+        return isOutOfStock;
+      };
+    },
+  },
+
   methods: {
     async GetcollectionApi() {
       try {
@@ -256,11 +126,9 @@ export default {
           "http://localhost:8000/api/v1/collection",
           config
         );
-        console.log(response.data.collections);
         for (let i = 0; i < response.data.collections.length; i++) {
           this.collectionData.push(response.data.collections[i]);
         }
-        console.log(this.collectionData);
       } catch (error) {
         console.log(error);
         this.errorMessage =
@@ -274,7 +142,6 @@ export default {
         );
         const data = response.data.product;
         this.productList = data;
-        console.log(this.productList);
         this.errorMessage = ""; // Reset error message
       } catch (error) {
         console.log(error);
@@ -282,15 +149,26 @@ export default {
           error.response?.data?.message || "An error occurred.";
       }
     },
-    fetchProductData(id) {
-      this.store.getCurrentCollectionId(id);
+    fetchProductData(id, collectionName) {
+      this.store.updateCurrentCollectionID();
+      this.store.getCurrentCollectionId(id, collectionName);
       this.$router.push("/product_list");
+    },
+    addToCard(id) {
+      const token = localStorage.getItem("token");
+      const config = {
+        headers: {
+          Accept: "application/json",
+          Authorization: "Bearer " + token,
+        },
+      };
+      this.store.addTocardBag(id);
     },
   },
 };
 </script>
 <style>
-/* card */
+/* Card styles */
 .card {
   position: relative;
   overflow: hidden;
@@ -468,7 +346,7 @@ export default {
   color: white;
 }
 
-.bag-button :hover {
+.bag-button:hover {
   background: #000000;
 }
 
@@ -479,6 +357,10 @@ export default {
 .card-img {
   height: 400px;
 }
+.custom-link:hover {
+  text-decoration: underline;
+}
+
 /* Animation */
 @keyframes fadeIn {
   0% {
@@ -496,5 +378,32 @@ h1 {
   font-weight: bold;
   text-align: center;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Dim out-of-stock products */
+.out-of-stock {
+  opacity: 0.5;
+  transition: opacity 0.3s; /* Add a transition for smoother change */
+  pointer-events: none; /* Disable hover and click for out-of-stock products */
+}
+
+/* Style the "Out of Stock" message on hover */
+.out-of-stock:hover .out-of-stock-message {
+  opacity: 1; /* Show the message on hover */
+}
+
+/* Style the "Out of Stock" message */
+.out-of-stock-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 0, 0, 0.7); /* Red background for the message */
+  color: white;
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s;
 }
 </style>
