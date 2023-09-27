@@ -147,7 +147,7 @@ export default {
               },
             };
             const response = await axios.get(
-              `http://15.207.223.189:8000/api/v1/product/${value}`,
+              `http://localhost:8000/api/v1/product/${value}`,
               config
             );
             const product = response.data.product;
@@ -188,7 +188,7 @@ export default {
 
         const requestData = { products };
         response = await axios.post(
-          `http://15.207.223.189:8000/api/v1/order/create-order`,
+          `http://localhost:8000/api/v1/order/create-order`,
           requestData
         );
 

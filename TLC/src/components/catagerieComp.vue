@@ -252,7 +252,7 @@ export default {
     async getCatagoryList() {
       try {
         const response = await axios.get(
-          "http://15.207.223.189:8000/api/v1/collection"
+          "http://localhost:8000/api/v1/collection"
         );
         const data = response.data.collections;
         this.CatagoryList = data;

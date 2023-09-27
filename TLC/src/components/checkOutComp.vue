@@ -72,10 +72,13 @@
                       use your Order ID as the payment reference. Your order
                       will not be shipped until the funds have cleared in our
                       account. Please send the payment screenshot to
-                      support@allmytech.pk or Whatsapp on +923222120130 Please
-                      note that this deal will not work if you have used a
-                      discount coupon in the same order. Name: All my Tech Bank:
-                      Bank Alfalah Account Number: 03031004822206
+                      support@theleftovercloset.com or Whatsapp on
+                      +92-325-1555151 Please note that this deal will not work
+                      if you have used a discount coupon in the same order.
+                      <br />
+                      Name: The Leftover Closet Bank <br />
+                      Bank Alfalah Account Number: 56195001447759 <br />
+                      IBAN: PK42ALFH5619005001447759
                     </p>
                   </div>
                 </div>
@@ -248,7 +251,7 @@ export default {
           },
         };
         const response = await axios.get(
-          `http://15.207.223.189:8000/api/v1/product/${this.store.singleProductId}`,
+          `http://localhost:8000/api/v1/product/${this.store.singleProductId}`,
           config
         );
         this.singleProductOject = response.data.product;
@@ -331,7 +334,7 @@ export default {
     },
     async applyCoupon() {
       const response = await axios.get(
-        `http://15.207.223.189:8000/api/v1/coupon/get-active-coupon`
+        `http://localhost:8000/api/v1/coupon/get-active-coupon`
       );
       if (response.data.coupons[0].code === this.couponCode) {
         this.calculateDiscountAndPrice();
@@ -378,7 +381,7 @@ export default {
       console.log(data);
       try {
         const response = await axios.post(
-          `http://15.207.223.189:8000/api/v1/order/place-order`,
+          `http://localhost:8000/api/v1/order/place-order`,
           data
         );
         console.log(response.data);
@@ -475,7 +478,7 @@ export default {
         };
         try {
           const response = await axios.post(
-            `http://15.207.223.189:8000/api/v1/order/send-order-email`,
+            `http://localhost:8000/api/v1/order/send-order-email`,
             emailData,
             config
           );
@@ -553,7 +556,7 @@ export default {
         };
         try {
           const response = await axios.post(
-            `http://15.207.223.189:8000/api/v1/order/send-order-email`,
+            `http://localhost:8000/api/v1/order/send-order-email`,
             emailData,
             config
           );

@@ -257,7 +257,7 @@ export default {
         },
       };
       axios
-        .get("http://15.207.223.189:8000/api/v1/order", config)
+        .get("http://localhost:8000/api/v1/order", config)
         .then((res) => {
           this.allOrders = res.data.orders;
           this.totalOrder = this.allOrders.length;
@@ -275,10 +275,7 @@ export default {
         },
       };
       axios
-        .get(
-          "http://15.207.223.189:8000/api/v1/coupon/get-active-coupon",
-          config
-        )
+        .get("http://localhost:8000/api/v1/coupon/get-active-coupon", config)
         .then((res) => {
           this.allCouponsList = res.data.coupons;
           console.log(this.allCouponsList);

@@ -38,9 +38,9 @@
         <div class="image-column col-lg-6 col-md-12 col-sm-12">
           <div class="inner-column wow fadeInLeft">
             <!-- <div class="author-desc">
-              <h2>Rahul Kumar Yadav</h2>
-              <span>Web Developer</span>
-            </div> -->
+                <h2>Rahul Kumar Yadav</h2>
+                <span>Web Developer</span>
+              </div> -->
             <figure class="image-1">
               <a href="#" class="lightbox-image" data-fancybox="images"
                 ><img

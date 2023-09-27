@@ -28,13 +28,10 @@
             d="M8,30a1,1,0,0,1-.42-.09A1,1,0,0,1,7,29V25.74a8,8,0,0,1-1.28-15,1,1,0,1,1,.82,1.82,6,6,0,0,0,1.6,11.4,1,1,0,0,1,.86,1v1.94l3.16-2.63A1,1,0,0,1,12.8,24H15a5.94,5.94,0,0,0,4.29-1.82,1,1,0,0,1,1.44,1.4A8,8,0,0,1,15,26H13.16L8.64,29.77A1,1,0,0,1,8,30Z"
           />
         </svg>
-        <div class="title">
-          Silakan chat dengan tim kami
-          <span>Admin akan merespon dalam beberapa menit</span>
-        </div>
+        <div class="title">Name: The Leftover Closet</div>
       </div>
       <div class="chat-text">
-        <span>Halo, ada yang bisa kami bantu?</span>
+        <span>Contact Us: +92-325-1555151</span>
         <span class="typing">
           <svg viewBox="0 0 512 512">
             <circle cx="256" cy="256" r="48"></circle>
@@ -44,19 +41,6 @@
         </span>
       </div>
     </div>
-    <a
-      class="chat-button"
-      href="https://api.whatsapp.com/send?phone=6281285528669"
-      rel="nofollow noreferrer"
-      target="_blank"
-    >
-      <span>Ketik pesan</span>
-      <svg viewBox="0 0 32 32">
-        <path
-          d="M19.47,31a2,2,0,0,1-1.8-1.09l-4-7.57a1,1,0,0,1,1.77-.93l4,7.57L29,3.06,3,12.49l9.8,5.26,8.32-8.32a1,1,0,0,1,1.42,1.42l-8.85,8.84a1,1,0,0,1-1.17.18L2.09,14.33a2,2,0,0,1,.25-3.72L28.25,1.13a2,2,0,0,1,2.62,2.62L21.39,29.66A2,2,0,0,1,19.61,31Z"
-        />
-      </svg>
-    </a>
   </div>
 </template>
 <style>

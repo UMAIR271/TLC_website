@@ -15,6 +15,17 @@ export default {
     sidebar,
     dashboardMain,
   },
+  mounted() {
+    this.isAuthenticated();
+  },
+  methods: {
+    isAuthenticated() {
+      const token = localStorage.getItem("token");
+      if (!token) {
+        this.$router.push("/login");
+      }
+    },
+  },
 };
 </script>
 <style scoped>

@@ -19,6 +19,7 @@ import women from "../views/women.vue";
 import shoes from "../views/shose.vue";
 import men from "../views/men.vue";
 import orderSuccess from "../views/orderSuccess.vue";
+import About from "../views/AboutUS.vue";
 const routes = [
   {
     path: "/login",
@@ -34,6 +35,11 @@ const routes = [
     path: "/",
     name: "Home",
     component: Home,
+  },
+  {
+    path: "/about",
+    name: "About",
+    component: About,
   },
   {
     path: "/test",

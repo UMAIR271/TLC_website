@@ -123,7 +123,7 @@ export default {
         };
 
         const response = await axios.get(
-          "http://15.207.223.189:8000/api/v1/collection",
+          "http://localhost:8000/api/v1/collection",
           config
         );
         for (let i = 0; i < response.data.collections.length; i++) {
@@ -138,7 +138,7 @@ export default {
     async getProductList() {
       try {
         const response = await axios.get(
-          "http://15.207.223.189:8000/api/v1/product/"
+          "http://localhost:8000/api/v1/product/"
         );
         const data = response.data.product;
         this.productList = data;

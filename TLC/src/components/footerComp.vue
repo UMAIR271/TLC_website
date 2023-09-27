@@ -32,38 +32,16 @@
             style="width: 70px"
           />
           <p>
-            <a href="#!">Travelling</a>
+            <router-link to="/">Home</router-link>
           </p>
           <p>
-            <a href="#!">About</a>
-          </p>
-          <p>
-            <a href="#!">BrandFlow</a>
+            <router-link to="about">About</router-link>
           </p>
           <p>
             <a href="#!">Services</a>
           </p>
         </div>
-        <hr class="clearfix w-100 d-md-none" />
-        <div id="link10" class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-          <h6 class="text-uppercase font-weight-bold">Useful links</h6>
-          <hr
-            class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto"
-            style="width: 70px"
-          />
-          <p>
-            <a href="#!">Your Account</a>
-          </p>
-          <p>
-            <a href="#!">Become an Affiliate</a>
-          </p>
-          <p>
-            <a href="#!">Shipping Rates</a>
-          </p>
-          <p>
-            <a href="#!">Help</a>
-          </p>
-        </div>
+
         <hr class="clearfix w-100 d-md-none" />
         <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
           <h6 class="text-uppercase font-weight-bold">Contact</h6>
@@ -71,10 +49,15 @@
             class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto"
             style="width: 60px"
           />
-          <p><i class="fas fa-home mr-3"></i> Mumbai, Maharashtra</p>
-          <p><i class="fas fa-envelope mr-3"></i> collab@codewithfaraz.com</p>
-          <p><i class="fas fa-phone mr-3"></i> + 91 80254 52xxx</p>
-          <p><i class="fas fa-print mr-3"></i> + 91 80254 55xxx</p>
+          <p>
+            <i class="fas fa-home mr-3"></i> Office: Airline Housing Society,
+            Lahore.
+          </p>
+          <p>
+            <i class="fas fa-envelope mr-3"></i> support@theleftovercloset.com
+          </p>
+          <p><i class="fas fa-phone mr-3"></i> What’s app: +92-325-1555151</p>
+          <p><i class="fas fa-print mr-3"></i> Call: +92-325-1555151</p>
         </div>
       </div>
     </div>
@@ -88,8 +71,8 @@
         <h5 class="mb-1">Register for free</h5>
       </li>
       <li class="list-inline-item">
-        <a href="#Contact" class="btn btn-outline-danger btn-rounded"
-          >Sign up!</a
+        <router-link class="btn btn-outline-danger btn-rounded" to="/signup"
+          >Sign up!</router-link
         >
       </li>
     </ul>
@@ -101,29 +84,16 @@
         class="list-unstyled list-inline text-center"
       >
         <li class="list-inline-item">
-          <a href="https://www.facebook.com/theleftovercloset" title="Facebook"
+          <a href=" https://www.facebook.com/theleftovercloset" title="Facebook"
             ><i class="fab fa-facebook"></i
           ></a>
         </li>
         <li class="list-inline-item">
-          <a href="https://www.twitter.com/codewithfaraz" title="Twitter"
-            ><i class="fab fa-twitter"></i
-          ></a>
-        </li>
-        <li class="list-inline-item">
           <a
-            href="https://www.instagram.com/theleftovercloset/"
+            href="https://www.instagram.com/_theleftovercloset/"
             title="Instagram"
-            ><i class="fb fa-instagram"></i
+            ><i class="fab fa-instagram"></i
           ></a>
-        </li>
-        <li class="list-inline-item">
-          <a href="https://www.youtube.com/@codewithfaraz" title="Youtube"
-            ><i class="fab fa-youtube"></i
-          ></a>
-        </li>
-        <li class="list-inline-item">
-          <a href="#." title="Github"><i class="fab fa-github"></i></a>
         </li>
       </ul>
     </div>

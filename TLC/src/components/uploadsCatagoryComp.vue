@@ -283,7 +283,7 @@ export default {
 
       try {
         const response = await axios.post(
-          "http://15.207.223.189:8000/api/v1/collection",
+          "http://localhost:8000/api/v1/collection",
           categoryData,
           config
         );
