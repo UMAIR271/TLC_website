@@ -64,7 +64,7 @@ export default {
       console.log(userData);
       try {
         const response = await axios.post(
-          "http://localhost:8000/api/v1/auth/signup",
+          "http://15.207.223.189:8000/api/v1/auth/signup",
           userData
         );
 

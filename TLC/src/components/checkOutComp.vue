@@ -251,7 +251,7 @@ export default {
           },
         };
         const response = await axios.get(
-          `http://localhost:8000/api/v1/product/${this.store.singleProductId}`,
+          `http://15.207.223.189:8000/api/v1/product/${this.store.singleProductId}`,
           config
         );
         this.singleProductOject = response.data.product;
@@ -334,7 +334,7 @@ export default {
     },
     async applyCoupon() {
       const response = await axios.get(
-        `http://localhost:8000/api/v1/coupon/get-active-coupon`
+        `http://15.207.223.189:8000/api/v1/coupon/get-active-coupon`
       );
       if (response.data.coupons[0].code === this.couponCode) {
         this.calculateDiscountAndPrice();
@@ -381,7 +381,7 @@ export default {
       console.log(data);
       try {
         const response = await axios.post(
-          `http://localhost:8000/api/v1/order/place-order`,
+          `http://15.207.223.189:8000/api/v1/order/place-order`,
           data
         );
         console.log(response.data);
@@ -478,7 +478,7 @@ export default {
         };
         try {
           const response = await axios.post(
-            `http://localhost:8000/api/v1/order/send-order-email`,
+            `http://15.207.223.189:8000/api/v1/order/send-order-email`,
             emailData,
             config
           );
@@ -556,7 +556,7 @@ export default {
         };
         try {
           const response = await axios.post(
-            `http://localhost:8000/api/v1/order/send-order-email`,
+            `http://15.207.223.189:8000/api/v1/order/send-order-email`,
             emailData,
             config
           );

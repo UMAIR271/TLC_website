@@ -271,7 +271,7 @@ export default {
         },
       };
       const response = await axios.post(
-        "http://localhost:8000/api/v1/coupon",
+        "http://15.207.223.189:8000/api/v1/coupon",
         {
           code: this.couponCode,
           discount: this.discountPrice,

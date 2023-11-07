@@ -346,7 +346,7 @@ export default {
       console.log(productData);
       try {
         const response = await axios.post(
-          "http://localhost:8000/api/v1/product/",
+          "http://15.207.223.189:8000/api/v1/product/",
           productData,
           config
         );
